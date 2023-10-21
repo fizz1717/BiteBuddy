@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiteBuddy</title>
+    <!-- bootstrap css-->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <!--main css-->
+    <link rel="stylesheet" href="CSS/main.css">
+    <!--font awesome js-->
+    <script src="Js/all.js"></script>
+    <!--google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
+    <!--magnifix popup-->
+    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+</head>
+<body>
+<!--social icons-->
+    <div class="container-fluid info p-3" id="top-icons">
+        <div class="row">
+            <div class="col d-flex justify-content-between align-items-baseline flex-wrap">
+                <div class="info-icons p-2">
+                    <a href="#" class="mr-2 primary-color"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="#" class="mr-2 primary-color"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="#" class="mr-2 primary-color"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="#" class="mr-2 primary-color"><i class="fab fa-yelp fa-2x"></i></a>
+                </div>
+                <h2 class="primary-color p-2 text-capitalize">A Place For Foodies</h2>
+            </div>
+        </div>
+    </div>
+    <!--header section-->
+    <header id="header">
+        <div class="container">
+            <div class="row height-98 align-items-center justify-content-center">
+                <div class="col">
+                    <div class="banner text-center">
+                        <h1 class="display-1 text-capitalize w-50 mx-auto">
+                            <small>Bite</small><strong class="primary-color">BUDDY</strong>
+                        </h1>
+                        <a href="LoginPage.html" class="btn main-btn sushi-btn my-4 text-capitalize">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#special-items" class="btn header-link primary-color"><i class="fas fa-arrow-down"></i></a>
+    </header>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg">
+        <a href="#" class="navbar-brand text-uppercase primary-color">BiteBuddy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar">
+            <div class="toggler-btn">
+                <div class="bar bar1"></div>
+                <div class="bar bar2"></div>
+                <div class="bar bar3"></div>
+            </div>
+        </button>
+        <!--jquery-->
+        <script src="Js/jquery-3.4.1.min.js"></script>
+        <!--bootstrap-->
+        <script src="Js/bootstrap.bundle.min.js"></script>
+        <!--ripple-->
+        <script src="Js/jquery.ripples-min.js"></script>
+        <!--magnific popup-->
+        <script src="magnific-popup/jquery.magnific-popup.js"></script>
+        <!--js-->
+        <script src="Js/script.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-database.js"></script>
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA31DCogiFh5-6nqka-onPDqXEXefkUD20",
+            authDomain: "uggghh-eaecd.firebaseapp.com",
+            databaseURL: "https://uggghh-eaecd.firebaseio.com",
+            projectId: "uggghh-eaecd",
+            storageBucket: "uggghh-eaecd.appspot.com",
+            messagingSenderId: "1065017607625",
+            appId: "1:1065017607625:web:2831a3b55ee3bd4e"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database().ref();
+        console.log("database " + database );
+        // var userId = firebase.auth().currentUser.uid;
+        database.once('value').then(function(snapshot) {
+            //var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+            console.log("The given item is ->  " + snapshot.val().order[2].item);
+            });
+        </script>
+    </body>
+</html>
